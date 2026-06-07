@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Profile Webpage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <h1>Fahad Rahman</h1>
+    <p>Computing Systems Engineering Technologist · St. John's, NL</p>
+  </header>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>I am an aspiring Computing Systems Engineering Technologist based in St. John's, Newfoundland. My passion lies in constructing clean, responsive, and fully accessible digital frameworks. When I am not debugging code, I enjoy exploring local nature trails and experimenting with new systems configurations.</p>
+      <img src="Photo.png" alt="A professional headshot of Your Name smiling in front of a neutral backdrop">
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+  <h2 id="skills-heading">Skills</h2>
+  
+  <h3>Frontend &amp; Design</h3>
+  <ul>
+    <li>HTML5 &amp; Semantic Mark-up</li>
+    <li>CSS3 (Flexbox &amp; Grid Layouts)</li>
+  </ul>
+
+  <h3>Backend &amp; Databases</h3>
+  <ul>
+    <li>C &amp; C++ Programming</li>
+    <li>SQL (Structured Query Language)</li>
+    <li>Java Development</li>
+    <li>Systems Troubleshooting</li>
+  </ul>
+
+  <h3>Engineering &amp; Project Management</h3>
+  <ul>
+    <li>AutoCAD (2D/3D Drafting)</li>
+    <li>Microsoft Project (Scheduling &amp; Tracking)</li>
+    <li>Technical Documentation</li>
+    <li>Collaborative Problem Solving</li>
+  </ul>
+</section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+  <h2 id="projects-heading">Projects</h2>
+  
+  <article>
+    <h3>Classroom Booking System</h3>
+    <p>Designed and built a full-stack web application for faculty members to reserve classrooms. Developed detailed Entity-Relationship Diagrams (ERDs) and a highly normalized relational model to enforce core database logic and constraints.</p>
+    <p><strong>Technologies:</strong> SQL, Relational Database Design, ERD</p>
+    <a href="https://github.com/fahad-rahman78/CP3520_Databases" aria-label="View Classroom Booking System project on GitHub">View on GitHub</a>
+  </article>
+
+  <article>
+    <h3>Campus Event Management System</h3>
+    <p>Developed a robust desktop application to streamline campus events, managing everything from student registration to scheduling and automated notifications. Mapped system architecture using UML diagrams and maintained project workflow using Agile (Scrum) principles.</p>
+    <p><strong>Technologies:</strong> Java, XML, OOP, Git, GitHub</p>
+    <a href="https://github.com/fahad-rahman78/CP3490-Project" aria-label="View Campus Event Management System project on GitHub">View on GitHub</a>
+  </article>
+
+</section>
+
+    <aside aria-label="Quick facts">
+  <h2>Quick Facts</h2>
+  <dl>
+    <dt>Hometown</dt>
+    <dd>St. John's, NL</dd>
+    
+    <dt>First Code</dt>
+    <dd>A custom C++ script to automate my PC setup</dd>
+    
+    <dt>Tech Habit</dt>
+    <dd>Building custom relational database schemas for fun</dd>
+    
+    <dt>OS Preference</dt>
+    <dd>Linux Terminal over graphical interfaces any day</dd>
+  </dl>
+</aside>
+
+  </main>
+
+  <footer id="contact">
+    <div id="footer-contact">
+      <h2>Get In Touch</h2>
+      <ul>
+        <li>
+          <a href="mailto:fahad.rahman78@ed.cna.nl.ca">
+            <span aria-hidden="true">✉</span> fahad.rahman78@ed.cna.nl.ca
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/fahad-rahman78" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p><small>&copy; 2026 Fahad Rahman</small></p>
+  </footer>
+
+</body>
+</html>

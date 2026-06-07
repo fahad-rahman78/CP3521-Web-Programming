@@ -1,0 +1,233 @@
+/* ── Part 2.2: Verified Contrast Ratios (WCAG AA Compliant)  */
+
+:root {
+  /* Design Tokens */
+  --clr-primary:  #0a2540;   
+  --clr-bg:       #fcfaf7;   
+  --clr-surface:  #ffffff;   
+  --clr-accent:   #b8431d;   
+  --clr-text:     #1c1c1c;   
+  --clr-muted:    #4a4a4a;   
+
+  --font-heading: 'Georgia', serif;
+  --font-body:    'Verdana', sans-serif;
+
+  --space-sm:  0.75rem;
+  --space-md:  1.5rem;
+  --space-lg:  3rem;
+  --radius:    0.5rem;
+}
+
+/* ── Task 2.3: Reset & Base Styles ───────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  
+  /* Task 2.4: Layout with CSS Grid */
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--clr-primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: var(--space-sm); }
+h3 { 
+  font-size: 1.15rem; 
+  color: var(--clr-primary); 
+  margin-top: var(--space-md);     
+  margin-bottom: var(--space-sm); 
+}
+
+a {
+  color: var(--clr-accent);
+  text-underline-offset: 4px;
+}
+
+a:hover, a:focus {
+  text-decoration-thickness: 2px;
+}
+
+/* Task 2.3: High visibility focus indicators for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ── Task 2.4: Layout Semantic Structure ─────────────*/
+header  { grid-area: header; }
+nav     { grid-area: nav; }
+main    { grid-area: main; }
+footer  { grid-area: footer; }
+
+/* Header element styling */
+header {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+header h1 { color: var(--clr-bg); }
+header p  { color: var(--clr-bg); opacity: 0.9; margin-top: var(--space-sm); }
+
+/* ── Task 2.5: Navigation Element (Sticky & Flex) ──────────── */
+nav {
+  background-color: var(--clr-surface);
+  border-bottom: 3px solid var(--clr-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  padding: var(--space-sm) var(--space-md);
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+nav a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+}
+
+/* ── Task 2.6: Main Content Containers & Flex Matrix ───────── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+section {
+  background-color: var(--clr-surface);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin-top: var(--space-sm);
+}
+
+/* Description Lists Formatting inside Aside */
+aside {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+}
+aside h2 { color: var(--clr-bg); }
+dl { display: grid; grid-template-columns: max-content 1fr; gap: var(--space-sm); margin-top: var(--space-sm); }
+dt { font-weight: bold; color: var(--clr-bg); }
+dd { color: var(--clr-bg); opacity: 0.85; padding-left: var(--space-sm); }
+
+/* Project Layout cards override structure */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+#projects > h2 { grid-column: 1 / -1; }
+
+article {
+  background-color: var(--clr-bg);
+  border-left: 5px solid var(--clr-accent);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+article p { margin-bottom: 0.5rem; color: var(--clr-text); }
+article p strong { color: var(--clr-primary); }
+
+/* ── Task 2.7: Footer Formatting ──────*/
+footer {
+  background-color: var(--clr-primary);
+  color: var(--clr-bg);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+footer h2   { color: var(--clr-bg); margin-bottom: var(--space-sm); }
+footer a    { color: var(--clr-bg); text-underline-offset: 4px; }
+footer ul   { list-style: none; margin: var(--space-sm) 0; display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+footer li   { margin-bottom: 0; }
+footer small { opacity: 0.7; display: block; margin-top: var(--space-md); }
+
+/* ── Task 3.1: Keyboard Skip Navigation Link ───────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 0 0 var(--radius) var(--radius);
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Task 3.2: Mobile Responsive Layout Adjustment ──── */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  nav a { display: block; width: 100%; }
+  main { padding: var(--space-md) var(--space-sm); }
+  dl { grid-template-columns: 1fr; gap: 0.25rem; }
+  dd { padding-left: 0; margin-bottom: 0.5rem; }
+  footer ul { flex-direction: column; gap: 0.5rem; }
+}
+
+/* ── Task 3.3: Motion Sickness Protection Override ─────*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
